@@ -2,8 +2,17 @@
 sudo: true
 language: ruby
 cache: bundler
-before_install: sudo apt-get install libzmq3-dev
+before_install:
+- git clone -b feature/event_interface https://github.com/elastic/logstash
+- sudo apt-get install libzmq3-dev
 rvm:
+<<<<<<< HEAD
 - jruby-1.7.24
 script:
 - bundle exec rspec spec
+=======
+- jruby-1.7.25
+script:
+- bundle exec rspec spec
+jdk: oraclejdk8
+>>>>>>> origin/feature/plugin-api-2_0
